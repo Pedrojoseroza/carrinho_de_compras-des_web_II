@@ -4,6 +4,7 @@
 </script>
 
 <template>
+    <AppHeader> </AppHeader>
   
 </template>
 
