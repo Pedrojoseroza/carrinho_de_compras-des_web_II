@@ -17,20 +17,23 @@ defineEmits(['addToCart'])
       Resenha: {{ resenha }}
 
     </label>
-    <p>
+    <p class="preco">
       Preço: {{ preco }}
     </p>
-    <button @click="$emits('addToCart')">
+    <button @click="$emit('addToCart')">
       Adicionar ao carrinho
     </button>
   </div>
 </template>
 
 <style scoped>
+*{
+  padding: 5px 0;
+}
 .product-card {
-  width: 30vw;
+  max-width: 20vw;
   padding: 10px 15px;
-  
+  text-align: center;
 }
 .product-card h1 {
   font-size: 1.5rem;
@@ -46,12 +49,24 @@ defineEmits(['addToCart'])
   font-size: 1rem;
   color: black;
 }
-.product-card p {
+.product-card p.preco {
+  text-align: center;
   font-size: 0.9rem;
   color: rgb(105, 127, 175);
 }
 .product-card img {
   width: 10vw;
 }
+.product-card button {
+  background-color: rgb(28, 22, 88);
+  color: antiquewhite;
+  padding: 5px;
+  border: none;
+  box-shadow: 0 5px 5px 0;
+}
+.product-card button:active{
+  background-color: rgb(21, 17, 70);
+    transform: translateY(1px);
 
+}
 </style>
