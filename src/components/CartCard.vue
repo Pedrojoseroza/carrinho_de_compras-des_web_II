@@ -1,4 +1,6 @@
 <script setup>
+import { formatarPreco } from '@/utils/produtosUtils';
+
 defineProps(['id', 'nome', 'url_imagem', 'preco', 'quant'])
 defineEmits(['decresceQuant', 'acresceQuant'])
 </script>
@@ -10,7 +12,7 @@ defineEmits(['decresceQuant', 'acresceQuant'])
       {{ nome }}
     </h2>
     <p> Preço
-      {{ preco }}
+      {{ formatarPreco(preco) }}
     </p>
     <div class="quantidades">
       <button @click="$emit('decresceQuant', id)" :disabled="quant == 0">-</button>
@@ -20,7 +22,7 @@ defineEmits(['decresceQuant', 'acresceQuant'])
        <button @click="$emit('acresceQuant', id)" :disabled="quant >= 99">+</button>
     </div>
     <p>
-      Subtotal: {{ quant * preco }}
+      Subtotal: {{formatarPreco(preco * quant)}}
     </p>
   </div>
 </template>

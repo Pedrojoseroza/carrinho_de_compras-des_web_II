@@ -1,4 +1,14 @@
 import { ref } from "vue";
+import { moedaPais } from './global'
+import { idioma } from './global'
+
+function formatarPreco(valor) {
+  return Number(valor).toLocaleString(idioma, {
+    style: 'currency',
+    currency: moedaPais,
+  })
+}
+export { formatarPreco }
 
 const filtro = ref('');
 function filtrarLista(arr) {
