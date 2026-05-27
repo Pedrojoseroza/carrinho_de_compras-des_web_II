@@ -5,14 +5,14 @@
 
 <template>
  <header class="header">
-    
+
     <div class="logo">
       <img src="#" alt="Logo" />
       <h1>Biblioteca</h1>
     </div>
 
 
-   
+
     <div class="search-box">
       <input type="text" placeholder="Pesquisar produtos..." />
       <button>Buscar</button>
@@ -23,7 +23,7 @@
       <a href="#"><img src="/public/Estrela.png" alt=""></a>
       <a href="#"><img src="/public/Carrinho.png" alt=""></a>
     </nav>
-  
+
 </header>
 </template>
 
