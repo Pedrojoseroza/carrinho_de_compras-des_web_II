@@ -4,9 +4,6 @@ import ProductList from '@/components/products/ProductList.vue';
 </script>
 
 <template>
-  <header>
-    <AppHeader/>
-  </header>
   <main>
     <ProductList/>
   </main>
