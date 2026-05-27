@@ -1,5 +1,6 @@
 <script setup>
-import { carrinho } from '@/services/CartServices';
+import { carrinho, adicionarQuantidade, subtrairQuantidade } from '@/services/CartServices';
+import CartCard from '@/components/CartCard.vue';
 
 </script>
 
@@ -12,6 +13,15 @@ import { carrinho } from '@/services/CartServices';
 
       <div class="box">
         <ul>
+          <CartCard v-for="pedido in carrinho"
+          :nome="pedido.item.titulo"
+          :preco="pedido.item.preco"
+          :id="pedido.item.id"
+          :url_imagem="pedido.item.capa"
+          :quant="pedido.quantidade"
+          @acresce-quant="adicionarQuantidade"
+          @decresce-quant="subtrairQuantidade"
+          ></CartCard>
         </ul>
         <p v-show="carrinho.length == 0">
           Você ainda não tem nada no carrinho : )
@@ -56,10 +66,11 @@ import { carrinho } from '@/services/CartServices';
   gap: 30px;
 }
 .container .subtotal {
+  align-self: center;
   background-color: white;
   border: 2px solid rgb(80, 70, 70);
   max-width: 40vw;
-  min-height: 40vh;
+  max-height: 40vh;
   border-radius: 20px;
   padding: 10px;
 }
