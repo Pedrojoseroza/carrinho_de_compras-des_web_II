@@ -5,30 +5,41 @@ import produtos from '@/data/products.js';
 
 <template>
   <div class="container">
-    <ul>
-      <ProductCard v-for="livro in produtos"
-      :titulo="livro.titulo"
-      :autor="livro.autor"
-      :id="livro.id"
-      :url_imagem="livro.capa"
-      :preco="livro.preco"
-      :resenha="livro.resenha">
-    </ProductCard>
-    </ul>
+    <h1>
+      Livros à Venda
+    </h1>
+    <div class="container-livro">
+      <ul>
+        <ProductCard v-for="livro in produtos"
+        :titulo="livro.titulo"
+        :autor="livro.autor"
+        :id="livro.id"
+        :url_imagem="livro.capa"
+        :preco="livro.preco"
+        :resenha="livro.resenha">
+      </ProductCard>
+      </ul>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .container {
-  width: 100%;
+  padding: 30px 10vw;
+}
+.container h1 {
+  margin: 20px 0;
+  color: #0c2363;
+}
+.container-livro {
   display: flex;
   justify-content: center;
-  padding: 10px 0;
+
 }
 ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 15px;
 }
 
 </style>

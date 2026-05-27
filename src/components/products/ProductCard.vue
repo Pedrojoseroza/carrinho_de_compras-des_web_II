@@ -40,6 +40,12 @@ defineEmits(['addToCart'])
   display: grid;
   border-radius: 10px;
   box-shadow: 0 2px 2px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 4px 0;
+
 }
 .product-card h1 {
   font-size: 1.5rem;
