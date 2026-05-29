@@ -20,9 +20,10 @@
 
 
      <nav class="menu">
-      <a href="#"><img src="/public/Estrela.png" alt=""></a>
-      <a href="#"><img src="/public/Carrinho.png" alt=""></a>
-    </nav>
+
+      <RouterLink to="/favoritos"><img src="/public/images/Estrela.png" ></RouterLink>
+      <RouterLink to="/carrinho"><img src="/public/images/Carrinho.png" ></RouterLink>
+ </nav>
 
 </header>
 </template>

@@ -7,8 +7,11 @@ defineEmits(['addToCart'])
   <div class="product-card">
     <img :src="url_imagem" :alt="'imagem' + titulo">
     <h2>
-      {{ titulo }}
+      {{ titulo }} 
     </h2>
+
+<button class="favoritos"> <img src="/public/images/coracaoFavorito.png" alt="ImgCoracao"></button>
+
     <label>
       <span>
         Autor: {{ autor }}
@@ -30,6 +33,7 @@ defineEmits(['addToCart'])
 *{
   padding: 5px 0;
 }
+
 .product-card {
   max-width: 20vw;
   max-height: 80vh;
@@ -84,4 +88,11 @@ defineEmits(['addToCart'])
     transform: translateY(1px);
 
 }
+.product-card .favoritos{
+  background-color: white;
+  border: none;
+  box-shadow: none;
+  
+}
+
 </style>
