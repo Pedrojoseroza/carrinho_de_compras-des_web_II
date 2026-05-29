@@ -1,4 +1,6 @@
 <script setup>
+import { formatarPreco } from '@/utils/produtosUtils';
+
 defineProps(["titulo", 'preco', 'id', 'url_imagem', 'resenha', 'autor'])
 defineEmits(['addToCart'])
 </script>
@@ -18,9 +20,9 @@ defineEmits(['addToCart'])
 
     </label>
     <p class="preco">
-      Preço: {{ preco }}
+      Preço: {{ formatarPreco(preco) }}
     </p>
-    <button @click="$emit('addToCart')">
+    <button @click="$emit('addToCart', id)">
       Adicionar ao carrinho
     </button>
   </div>
@@ -41,6 +43,7 @@ defineEmits(['addToCart'])
   border-radius: 10px;
   box-shadow: 0 2px 2px 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
 }
 .product-card:hover {
   transform: scale(1.05);
@@ -70,6 +73,7 @@ defineEmits(['addToCart'])
 }
 .product-card img {
   width: 10vw;
+  height: 30vh;
   margin: 0 auto;
 }
 .product-card button {
