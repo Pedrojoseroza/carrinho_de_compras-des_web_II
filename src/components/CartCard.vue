@@ -1,13 +1,14 @@
 <script setup>
+import { removerDoCarrinho } from '@/services/CartServices';
 import { formatarPreco } from '@/utils/produtosUtils';
 
 defineProps(['id', 'nome', 'url_imagem', 'preco', 'quant'])
-defineEmits(['decresceQuant', 'acresceQuant'])
+defineEmits(['decresceQuant', 'acresceQuant', 'removeCarrinho'])
 </script>
 
 <template>
   <div class="container">
-    <button>
+    <button @click="$emit('removeCarrinho', id)">
       X
     </button>
     <img :src="url_imagem" alt="imagem">

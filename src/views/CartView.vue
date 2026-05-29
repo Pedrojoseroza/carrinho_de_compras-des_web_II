@@ -1,6 +1,9 @@
 <script setup>
-import { carrinho, adicionarQuantidade, subtrairQuantidade } from '@/services/CartServices';
+import { carrinho, adicionarQuantidade, subtrairQuantidade, calcularTotal, removerDoCarrinho } from '@/services/CartServices';
 import CartCard from '@/components/CartCard.vue';
+import { computed } from 'vue';
+import { formatarPreco } from '@/utils/produtosUtils';
+const totalCalculado = computed(()=>calcularTotal())
 
 </script>
 
@@ -21,6 +24,7 @@ import CartCard from '@/components/CartCard.vue';
           :quant="pedido.quantidade"
           @acresce-quant="adicionarQuantidade"
           @decresce-quant="subtrairQuantidade"
+          @remove-carrinho="removerDoCarrinho"
           ></CartCard>
         </ul>
         <p v-show="carrinho.length == 0">
@@ -31,7 +35,16 @@ import CartCard from '@/components/CartCard.vue';
         <h2>
           Subtotal da compra até agora:
         </h2>
-        <label></label>
+        <p>
+          Preço
+          <label>{{ formatarPreco(totalCalculado) }}</label>
+        </p>
+        <p>
+          Frete: R$ 0,00
+        </p>
+        <p>
+          Total : {{ formatarPreco(totalCalculado) }}
+        </p>
       </div>
     </section>
   </div>
@@ -54,7 +67,9 @@ import CartCard from '@/components/CartCard.vue';
   padding: 15px;
   background-color: white;
 }
-
+.container .box ul nth-child {
+  margin: 10px 0;
+}
 .container .box p {
   font-size: 1.3rem;
   text-align: center;

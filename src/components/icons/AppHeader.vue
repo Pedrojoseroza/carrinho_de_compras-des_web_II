@@ -18,7 +18,6 @@ import { filtro } from '@/utils/produtosUtils';
 
     <div class="search-box">
       <input type="text" placeholder="Pesquisar produtos..." v-model="filtro" />
-      <button>Buscar</button>
     </div>
 
 
@@ -74,7 +73,7 @@ import { filtro } from '@/utils/produtosUtils';
   flex: 1;
   padding: 10px;
   border: none;
-  border-radius: 8px 0 0 8px;
+  border-radius: 8px;
   outline: none;
 }
 

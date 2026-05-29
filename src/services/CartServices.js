@@ -1,4 +1,4 @@
-import { ref, watchEffect } from "vue";
+import { ref } from "vue";
 import produtos from "@/data/produtos";
 const carrinho = ref([]);
 function addCarrinho(id) {
@@ -21,10 +21,15 @@ function subtrairQuantidade(id) {
   const index = carrinho.value.findIndex(e => e.item.id == id)
   carrinho.value[index].quantidade--;
 }
-watchEffect(()=>{
-  console.log("AAAAAAAAAAAAAAAa")
-    // const index = carrinho.value.findIndex(e => e.quantidade == 0)
-    // carrinho.value.splice(index, 1);
-})
-
- export {addCarrinho, carrinho, adicionarQuantidade, subtrairQuantidade}
+function removerDoCarrinho(id) {
+  const index = carrinho.value.findIndex(e => e.item.id == id)
+  carrinho.value.splice(index, 1);
+}
+function calcularTotal() {
+  let soma = 0;
+  for (const pedido of carrinho.value) {
+    soma += pedido.quantidade * pedido.item.preco
+  }
+  return soma;
+}
+ export {addCarrinho, carrinho, adicionarQuantidade, subtrairQuantidade, calcularTotal, removerDoCarrinho}
