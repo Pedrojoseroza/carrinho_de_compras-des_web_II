@@ -6,12 +6,14 @@ defineEmits(['addToCart'])
 <template>
   <div class="product-card">
     <img :src="url_imagem" :alt="'imagem' + titulo">
+
+    <div class="titulo-container">
     <h2>
       {{ titulo }} 
     </h2>
-
 <button class="favoritos"> <img src="/public/images/coracaoFavorito.png" alt="ImgCoracao"></button>
-
+  </div>
+  
     <label>
       <span>
         Autor: {{ autor }}
@@ -93,6 +95,32 @@ defineEmits(['addToCart'])
   border: none;
   box-shadow: none;
   
+}
+
+.titulo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.titulo-container h2 {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.favoritos {
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.favoritos img {
+  width: 22px;
+  height: 22px;
 }
 
 </style>
