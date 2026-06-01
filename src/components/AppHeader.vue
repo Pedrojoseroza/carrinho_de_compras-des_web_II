@@ -9,9 +9,9 @@ import { filtro } from '@/utils/produtosUtils';
 
     <div class="logo">
       <RouterLink to="/">
-      <img src="#" alt="Logo" />
-      <h1>Biblioteca</h1>
-      </RouterLink>
+      <img src="/public/images/logo.png" alt="Logo" />
+    </RouterLink>
+    <h1>Oceano de Livros</h1>
     </div>
 
 
@@ -22,8 +22,8 @@ import { filtro } from '@/utils/produtosUtils';
 
 
      <nav class="menu">
-      <RouterLink to="/favoritos"><img src="/public/Estrela.png" ></RouterLink>
-      <RouterLink to="/carrinho"><img src="/public/Carrinho.png" ></RouterLink>
+      <RouterLink to="/favoritos"><img src="/public/images/Estrela.png" ></RouterLink>
+      <RouterLink to="/carrinho"><img src="/public/images/Carrinho.png" ></RouterLink>
     </nav>
 
 </header>
@@ -35,10 +35,9 @@ import { filtro } from '@/utils/produtosUtils';
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1e3a8a;
+  background-color: #1e3b8af5;
   padding: 15px 0;
   color: white;
-  gap: 20px;
   flex-wrap: wrap;
   position: fixed;
   top: 0;
@@ -53,14 +52,13 @@ import { filtro } from '@/utils/produtosUtils';
   padding: 0 0 0 20px;
 }
 
-.logo a img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+.logo img {
+  width: 70px;
+  height: 70px;
 }
 
-.logo  a h1 {
-  font-size: 24px;
+.logo  h1 {
+  font-size: 1.8rem;
 }
 
 .search-box {

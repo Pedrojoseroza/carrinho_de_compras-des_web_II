@@ -1,14 +1,18 @@
 <script setup>
-import AppHeader from './components/icons/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
+import AppHeader from './components/AppHeader.vue';
 import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <div>
+  <div class="body">
     <header>
       <AppHeader/>
     </header>
   <RouterView></RouterView>
+    <footer>
+      <AppFooter></AppFooter>
+    </footer>
   </div>
 </template>
 
@@ -16,8 +20,7 @@ import { RouterView } from 'vue-router';
 header {
   margin-bottom: 80px;
 }
-div {
-  min-height: 100vh;
+div.body {
  background-color: rgb(231, 230, 230);
 }
 </style>
