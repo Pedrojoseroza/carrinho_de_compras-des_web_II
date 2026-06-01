@@ -21,7 +21,6 @@ header {
   margin-bottom: 80px;
 }
 div.body {
-  min-height: 100vh;
  background-color: rgb(231, 230, 230);
 }
 </style>

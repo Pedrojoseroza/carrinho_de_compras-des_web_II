@@ -73,11 +73,15 @@ a {
   color: white;
   text-decoration: none;
 }
+a:hover {
+  transition: 0.5s all ease;
+  text-decoration: underline;
+}
 ul li {
   margin: 10px 0;
   list-style-type: none;
 }
-.container div.contatos p {
+.container  div.contatos p {
   margin: 20px 0;
 }
 </style>
