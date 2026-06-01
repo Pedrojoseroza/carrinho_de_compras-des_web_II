@@ -1,6 +1,6 @@
 <script setup>
 defineProps(["titulo", 'preco', 'id', 'url_imagem', 'resenha', 'autor'])
-defineEmits(['addToCart'])
+defineEmits(['addToCart','addToFavoritos'])
 </script>
 
 <template>
@@ -11,7 +11,7 @@ defineEmits(['addToCart'])
     <h2>
       {{ titulo }} 
     </h2>
-<button class="favoritos"> <img src="/public/images/coracaoFavorito.png" alt="ImgCoracao"></button>
+<button class="favoritos" @click="$emit('addToFavoritos', id)"> <img src="/public/images/coracaoFavorito.png" alt="ImgCoracao"></button>
   </div>
   
     <label>

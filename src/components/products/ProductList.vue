@@ -11,6 +11,7 @@ import produtos from '@/data/products.js';
     <div class="container-livro">
       <ul>
         <ProductCard v-for="livro in produtos"
+        v-bind:key="livro.id"
         :titulo="livro.titulo"
         :autor="livro.autor"
         :id="livro.id"
