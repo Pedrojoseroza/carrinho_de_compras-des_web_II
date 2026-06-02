@@ -1,6 +1,6 @@
 <script setup>
 import FavoriteCard from '@/components/FavoriteCard.vue';
-
+import { favoritos } from '@/services/favoritosServices';
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import FavoriteCard from '@/components/FavoriteCard.vue';
         :titulo="livro.titulo"
         :autor="livro.autor"
         :id="livro.id"
-        :url_imagem="livro.capa"
+        :capa="livro.capa"
         :preco="livro.preco"
         :resenha="livro.resenha">
        </FavoriteCard>
@@ -19,4 +19,6 @@ import FavoriteCard from '@/components/FavoriteCard.vue';
 </template>
 
 <style>
+
+
 </style>

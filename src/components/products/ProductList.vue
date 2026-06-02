@@ -1,6 +1,7 @@
 <script setup>
 import ProductCard from './ProductCard.vue';
 import produtos from '@/data/products.js';
+import { addFavoritos } from '@/services/favoritosServices.js';
 </script>
 
 <template>
@@ -17,7 +18,9 @@ import produtos from '@/data/products.js';
         :id="livro.id"
         :url_imagem="livro.capa"
         :preco="livro.preco"
-        :resenha="livro.resenha">
+        :resenha="livro.resenha"
+        @add-to-favoritos="addFavoritos"
+        >
       </ProductCard>
       </ul>
     </div>

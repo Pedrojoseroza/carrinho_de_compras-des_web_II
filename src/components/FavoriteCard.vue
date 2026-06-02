@@ -8,8 +8,17 @@ defineProps (['titulo' , 'preco' , 'capa' , 'autor' , 'resenha']);
 
 <template>
 <div class="cont">
-    <p>bla</p>
-    <p>{{titulo}}</p>
+
+  <h2>
+    {{titulo}}
+  </h2>
+
+
+    <img :src="capa" alt="Imagens">
+
+    <p>{{ resenha }}</p>
+
+    <p>{{ preco }}</p>
 
 </div>
 
@@ -21,4 +30,5 @@ defineProps (['titulo' , 'preco' , 'capa' , 'autor' , 'resenha']);
 .cont {
     border: 2px solid red;
 }
+
 </style>
