@@ -86,6 +86,15 @@ defineEmits(['addToCart'])
 .product-card button:active{
   background-color: rgb(21, 17, 70);
     transform: translateY(1px);
-
 }
+
+@media only screen and (max-width:900px) {
+  .product-card {
+    max-width: 60vw;
+    margin: 10px 0;
+  }
+  .product-card img {
+    width: 40vw;
+  }
+  }
 </style>

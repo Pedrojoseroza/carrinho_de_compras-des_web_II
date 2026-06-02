@@ -46,4 +46,11 @@ ul {
   gap: 15px;
 }
 
+@media only screen and (max-width:900px) {
+  
+  ul {
+    display: block;
+  }
+
+}
 </style>

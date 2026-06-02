@@ -67,9 +67,6 @@ const totalCalculado = computed(()=>calcularTotal())
   padding: 15px;
   background-color: white;
 }
-.container .box ul nth-child {
-  margin: 10px 0;
-}
 .container .box p {
   font-size: 1.3rem;
   text-align: center;
