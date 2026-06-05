@@ -10,6 +10,8 @@ const emit = defineEmits([
 </script>
 
 <template>
+
+  <h1>Seus livros Favoritos</h1>
  <div class="favorite-card">
 
     <img :src="capa" :alt="titulo" class="capa">
@@ -42,6 +44,10 @@ const emit = defineEmits([
 </template>
 
 <style>
+h1{
+  color: #1e3a8a;
+  padding: 13px;
+}
 .favorite-card{
   display: flex;
   gap: 20px;

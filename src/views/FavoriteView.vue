@@ -11,7 +11,7 @@ function adicionarAoCarrinho(livro) {
 </script>
 
 <template>
-    <h1>Seus livros Favoritos</h1>
+    
     <ul>
         <FavoriteCard v-for="livro in favoritos"
         v-bind:key="livro.id"
@@ -32,11 +32,6 @@ function adicionarAoCarrinho(livro) {
 
 <style>
 
- h1{
-  text-align: center;
-  padding: 13px;
-
-}
 
 
 </style>
