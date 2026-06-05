@@ -11,7 +11,6 @@ const emit = defineEmits([
 
 <template>
 
-  <h1>Seus livros Favoritos</h1>
  <div class="favorite-card">
 
     <img :src="capa" :alt="titulo" class="capa">
@@ -44,52 +43,60 @@ const emit = defineEmits([
 </template>
 
 <style>
-h1{
-  color: #1e3a8a;
-  padding: 13px;
-}
 .favorite-card{
-  display: flex;
-  gap: 20px;
-  border: 1.3px solid #ccc;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #999;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .capa{
-  width: 150px;
-  height: 220px;
-  padding: 5px;
+    width: 150px;
+    height: 220px;
 }
 
 .info{
-  flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    flex: 1;
 }
 
-.info p.resenha{
-color: #ccc;
+.info h2{
+    color: #001f6b;
+    margin-bottom: 10px;
+}
+
+.info h4{
+    margin-bottom: 10px;
+}
+.resenha{
+  color: #7a7a7a;
 }
 .preco{
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: steelblue
-  ;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #001f6b;
+    margin-top: 10px;
 }
 
-
 .botoes{
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 button{
-  padding: 8px 12px;
-  cursor: pointer;
-  background-color: cadetblue;
+padding: 5px;
+background-color: cadetblue;
 }
+
 
 
 </style>
