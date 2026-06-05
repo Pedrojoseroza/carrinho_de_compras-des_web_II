@@ -6,6 +6,13 @@ function addFavoritos (id){
     const index = produtos.value.findIndex(e => e.id == id)
     const elemento = produtos.value[index]
 
-   favoritos.value.push(elemento)
+   favoritos.value.push(elemento);
 }
-export {favoritos, addFavoritos}
+
+function removerFavorito(id) {
+    favoritos.value = favoritos.value.filter(
+        livro => livro.id !== id
+    );
+}
+
+export {favoritos, addFavoritos, removerFavorito}
