@@ -1,6 +1,8 @@
 <script setup>
+import { ref } from 'vue'
 defineProps(["titulo", 'preco', 'id', 'url_imagem', 'resenha', 'autor'])
-defineEmits(['addToCart','addToFavoritos'])
+const emit = defineEmits(['addToCart','addToFavoritos'])
+const favorito = ref(false)
 </script>
 
 <template>
@@ -9,11 +11,23 @@ defineEmits(['addToCart','addToFavoritos'])
 
     <div class="titulo-container">
     <h2>
-      {{ titulo }} 
+      {{ titulo }}
     </h2>
-<button class="favoritos" @click="$emit('addToFavoritos', id)"> <img src="/public/images/coracaoFavorito.png" alt="ImgCoracao"></button>
+
+<button class="favoritos"
+  @click="favorito = !favorito; emit('addToFavoritos', id)"
+>
+  <span
+    class="heart"
+    :class="{ ativo: favorito }"
+  >
+    ♥
+  </span>
+</button>
+
+
   </div>
-  
+
     <label>
       <span>
         Autor: {{ autor }}
@@ -32,8 +46,30 @@ defineEmits(['addToCart','addToFavoritos'])
 </template>
 
 <style scoped>
+
 *{
   padding: 5px 0;
+}
+
+.favoritos {
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 0;
+}
+.heart {
+  font-size: 24px;
+  color: #999;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+.heart:hover {
+  transform: scale(1.25);
+}
+.heart.ativo {
+  color: red;
+  animation: pulse 0.3s ease;
 }
 
 .product-card {
@@ -78,23 +114,13 @@ defineEmits(['addToCart','addToFavoritos'])
   width: 10vw;
   margin: 0 auto;
 }
-.product-card button {
-  background-color: rgb(28, 22, 88);
-  color: antiquewhite;
-  padding: 5px;
-  border: none;
-  box-shadow: 0 5px 5px 0;
-}
-.product-card button:active{
-  background-color: rgb(21, 17, 70);
-    transform: translateY(1px);
 
-}
+
 .product-card .favoritos{
   background-color: white;
   border: none;
   box-shadow: none;
-  
+
 }
 
 .titulo-container {
