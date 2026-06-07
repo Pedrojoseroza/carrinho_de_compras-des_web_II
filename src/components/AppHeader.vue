@@ -52,7 +52,6 @@ function fecharMenu() {
         </li>
       </ul>
     </nav>
-
 </header>
 </template>
 

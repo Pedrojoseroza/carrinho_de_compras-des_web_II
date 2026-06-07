@@ -1,8 +1,10 @@
 <script setup>
 import ProductCard from './ProductCard.vue';
+import { addFavoritos, removerFavorito } from '@/services/favoritosServices.js';
+
 import produtos from '@/data/produtos.js';
-import { filtrarLista, filtro } from '@/utils/produtosUtils.js';
-import { computed, ref } from 'vue';
+import { filtrarLista} from '@/utils/produtosUtils.js';
+import { computed } from 'vue';
 import { addCarrinho } from '@/services/CartServices.js';
 const listaFiltrada = computed(()=>filtrarLista(produtos.value));
 </script>
@@ -10,14 +12,20 @@ const listaFiltrada = computed(()=>filtrarLista(produtos.value));
 <template>
   <div class="container">
       <ul>
+
         <ProductCard v-for="livro in listaFiltrada"
+        :key="livro.id"
         :titulo="livro.titulo"
         :autor="livro.autor"
         :id="livro.id"
         :url_imagem="livro.capa"
         :preco="livro.preco"
         :resenha="livro.resenha"
-        @add-to-cart="addCarrinho">
+        @add-to-favoritos="addFavoritos"
+        @remover-favoritos="removerFavorito"
+        @add-to-cart="addCarrinho(livro.id)"
+        >
+
       </ProductCard>
       </ul>
   </div>
