@@ -85,5 +85,8 @@ ul li {
   .container {
     display: block;
   }
+  .container div {
+    max-width: 100%;
+  }
 }
 </style>

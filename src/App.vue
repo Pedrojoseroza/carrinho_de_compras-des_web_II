@@ -18,7 +18,7 @@ import { RouterView } from 'vue-router';
 
 <style scoped>
 header {
-  margin-bottom: 80px;
+  margin-bottom: 10vh;
 }
 div.body {
  background-color: rgb(231, 230, 230);
