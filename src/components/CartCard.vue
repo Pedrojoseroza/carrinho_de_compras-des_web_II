@@ -1,5 +1,4 @@
 <script setup>
-import { removerDoCarrinho } from '@/services/CartServices';
 import { formatarPreco } from '@/utils/produtosUtils';
 
 defineProps(['id', 'nome', 'url_imagem', 'preco', 'quant'])
@@ -72,5 +71,18 @@ div {
 }
 .container p:last-of-type {
   margin: 0 0 0 30px;
+}
+
+@media only screen and (max-width:900px) {
+  .container {
+    display: block;
+  }
+  .container img {
+    margin: 10px 20px;
+    height: 20vh;
+  }
+  .container > button {
+    margin: 0 0 0 20px;
+  }
 }
 </style>

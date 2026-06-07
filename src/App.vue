@@ -5,7 +5,7 @@ import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <div class="body">
+  <div class="corpo">
     <header>
       <AppHeader/>
     </header>
@@ -18,9 +18,9 @@ import { RouterView } from 'vue-router';
 
 <style scoped>
 header {
-  margin-bottom: 80px;
+  margin-bottom: 10vh;
 }
-div.body {
+div.corpo {
  background-color: rgb(231, 230, 230);
 }
 </style>

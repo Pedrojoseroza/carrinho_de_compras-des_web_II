@@ -134,8 +134,6 @@ watch(estaNosFavoritos, (novoValor) => {
 .product-card .favoritos{
   background-color: white;
   border: none;
-  box-shadow: none;
-
 }
 
 .titulo-container {
@@ -164,4 +162,14 @@ watch(estaNosFavoritos, (novoValor) => {
   height: 22px;
 }
 
+
+@media only screen and (max-width:900px) {
+  .product-card {
+    max-width: 60vw;
+    margin: 10px 0;
+  }
+  .product-card img {
+    width: 40vw;
+  }
+  }
 </style>

@@ -7,7 +7,7 @@ import { RouterLink } from 'vue-router';
     <div>
       <h2>
         <RouterLink to="/">
-          <img src="/public/images/logo.png" alt="logo">
+          <img src="/images/logo.png" alt="logo">
         </RouterLink>
         Oceano dos Livros
       </h2>
@@ -37,10 +37,7 @@ import { RouterLink } from 'vue-router';
         Contatos
       </h2>
       <p>Telefone: 47 9717-0160</p>
-      <p>email: oceanodoslivros@gmail.com</p>
-      <ul>
-        <li></li>
-      </ul>
+      <p>Email: oceanodoslivros@gmail.com</p>
     </div>
   </div>
 </template>
@@ -83,5 +80,13 @@ ul li {
 }
 .container  div.contatos p {
   margin: 20px 0;
+}
+@media only screen and (max-width:900px) {
+  .container {
+    display: block;
+  }
+  .container div {
+    max-width: 100%;
+  }
 }
 </style>

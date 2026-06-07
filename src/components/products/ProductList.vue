@@ -11,10 +11,6 @@ const listaFiltrada = computed(()=>filtrarLista(produtos.value));
 
 <template>
   <div class="container">
-    <h1>
-      Livros à Venda
-    </h1>
-    <div class="container-livro">
       <ul>
 
         <ProductCard v-for="livro in listaFiltrada"
@@ -32,18 +28,10 @@ const listaFiltrada = computed(()=>filtrarLista(produtos.value));
 
       </ProductCard>
       </ul>
-    </div>
   </div>
 </template>
 
 <style scoped>
-.container {
-  padding: 30px 10vw;
-}
-.container h1 {
-  margin: 20px 0;
-  color: #0c2363;
-}
 .container-livro {
   display: flex;
   justify-content: center;
@@ -54,4 +42,11 @@ ul {
   gap: 15px;
 }
 
+@media only screen and (max-width:900px) {
+
+  ul {
+    display: block;
+  }
+
+}
 </style>

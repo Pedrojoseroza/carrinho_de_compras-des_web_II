@@ -56,6 +56,7 @@ const totalCalculado = computed(()=>calcularTotal())
 }
 .container h1 {
   margin: 15px 0;
+  color: #0c2363;
 }
 .container .box {
   border: 2px solid rgb(80, 70, 70);
@@ -66,9 +67,6 @@ const totalCalculado = computed(()=>calcularTotal())
   grid-template-columns: 1fr;
   padding: 15px;
   background-color: white;
-}
-.container .box ul nth-child {
-  margin: 10px 0;
 }
 .container .box p {
   font-size: 1.3rem;
@@ -81,14 +79,19 @@ const totalCalculado = computed(()=>calcularTotal())
   gap: 30px;
 }
 .container .subtotal {
-  align-self: center;
   background-color: white;
   border: 2px solid rgb(80, 70, 70);
   max-width: 40vw;
-  max-height: 40vh;
+  height: min-content;
   border-radius: 20px;
   padding: 10px;
+  position: sticky;
+  top: 100px;
 }
-
+@media only screen and (max-width: 900px) {
+  .container {
+    padding: 40px 5vw;
+  }
+}
 
 </style>

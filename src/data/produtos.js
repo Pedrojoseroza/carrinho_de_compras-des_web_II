@@ -77,7 +77,7 @@ const produtos = ref ([
  {
    "id": 10,
    "titulo": "Dom casmurro",
-   "autor": "Mchado de Assis",
+   "autor": "Machado de Assis",
    "resenha": "Clássico da literatura brasileira que explora amor, ciúmes e dúvidas na narrativa marcante de Bentinho.",
    "preco": 25.99,
    "capa": "https://m.media-amazon.com/images/I/61x1ZHomWUL._AC_UF1000,1000_QL80_.jpg"
@@ -101,7 +101,7 @@ const produtos = ref ([
  {
    "id": 13,
    "titulo": "Biblioteca da meia-noite",
-   "autor": "Matt Halg",
+   "autor": "Matt Haig",
    "resenha": "Uma história emocionante sobre escolhas, arrependimentos e as infinitas possibilidades da vida.",
    "preco": 59.99,
    "capa": "https://http2.mlstatic.com/D_NQ_NP_2X_804652-MLU50455342325_062022-F.webp"
@@ -132,7 +132,7 @@ const produtos = ref ([
  },
  {
    "id": 17,
-   "titulo": "Box Divergente (4 Volumes), ",
+   "titulo": "Box Divergente (4 Volumes)",
    "autor": "Veronica Roth",
    "resenha": "Coleção completa da série Divergente, trazendo ação, romance e conflitos em uma sociedade dividida por facções.",
    "preco": 399.90,
@@ -148,8 +148,8 @@ const produtos = ref ([
  },
  {
    "id": 19,
-   "titulo": " A Hora Da Estrela",
-   "autor": "Clarise Lispector",
+   "titulo": "A Hora Da Estrela",
+   "autor": "Clarice Lispector",
    "resenha": "Clássico de Clarice Lispector que retrata de forma sensível e profunda a vida simples de Macabéa.",
    "preco": 44.99,
    "capa": "https://http2.mlstatic.com/D_NQ_NP_2X_985891-MLU75934012837_042024-F.webp"

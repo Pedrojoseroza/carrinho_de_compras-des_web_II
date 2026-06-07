@@ -42,7 +42,7 @@ const emit = defineEmits([
   </div>
 </template>
 
-<style>
+<style scoped>
 .favorite-card{
     display: flex;
     gap: 20px;
@@ -98,5 +98,9 @@ background-color: cadetblue;
 }
 
 
-
+@media only screen and (max-width: 900px) {
+  .favorite-card {
+    display: block;
+  }
+}
 </style>

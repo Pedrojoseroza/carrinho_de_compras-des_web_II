@@ -1,6 +1,17 @@
 <script setup>
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import { filtro } from '@/utils/produtosUtils';
+
+const menuAberto = ref(false);
+
+function abrirMenu() {
+  menuAberto.value = !menuAberto.value;
+}
+
+function fecharMenu() {
+  menuAberto.value = false;
+}
 </script>
 
 
@@ -9,7 +20,7 @@ import { filtro } from '@/utils/produtosUtils';
 
     <div class="logo">
       <RouterLink to="/">
-      <img src="/public/images/logo.png" alt="Logo" />
+      <img src="/images/logo.png" alt="Logo" />
     </RouterLink>
     <h1>Oceano de Livros</h1>
     </div>
@@ -22,22 +33,38 @@ import { filtro } from '@/utils/produtosUtils';
 
 
      <nav class="menu">
-      <RouterLink to="/favoritos"><img src="/public/images/Estrela.png" ></RouterLink>
-      <RouterLink to="/carrinho"><img src="/public/images/Carrinho.png" ></RouterLink>
+      <RouterLink to="/favoritos"><img src="/images/Estrela.png" ></RouterLink>
+      <RouterLink to="/carrinho"><img src="/images/Carrinho.png" ></RouterLink>
+    </nav>
+
+    <nav class="menu-hamburguer">
+      <img src="/images/burger-menu-svgrepo-com.svg" alt="Abrir menu" @click="abrirMenu">
+      <ul v-show="menuAberto" class="menu-cascata">
+        <li @click="fecharMenu">
+          <RouterLink to="/favoritos">
+            Favoritos
+          </RouterLink>
+        </li>
+        <li @click="fecharMenu">
+          <RouterLink to="/carrinho">
+            Carrinho
+          </RouterLink>
+        </li>
+      </ul>
     </nav>
 </header>
 </template>
 
 
-<style>
+<style scoped>
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #1e3b8af5;
   padding: 15px 0;
-  color: white;
   flex-wrap: wrap;
+  color: white;
   position: fixed;
   top: 0;
   z-index: 100;
@@ -52,18 +79,19 @@ import { filtro } from '@/utils/produtosUtils';
 }
 
 .logo img {
-  width: 70px;
-  height: 70px;
+  width: 10vh;
+  height: 10vh;
 }
 
 .logo  h1 {
   font-size: 1.8rem;
+  color: white;
 }
 
 .search-box {
   display: flex;
   flex: 1;
-  max-width: 500px;
+  max-width: 40vw;
 }
 
 .search-box input {
@@ -72,19 +100,6 @@ import { filtro } from '@/utils/produtosUtils';
   border: none;
   border-radius: 8px;
   outline: none;
-}
-
-.search-box button {
-  padding: 10px 15px;
-  border: none;
-  background-color: #2563eb;
-  color: white;
-  cursor: pointer;
-  border-radius: 0 8px 8px 0;
-}
-
-.search-box button:hover {
-  background-color: #3b82f6;
 }
 
 .menu {
@@ -108,5 +123,57 @@ import { filtro } from '@/utils/produtosUtils';
     height: 2rem;
     width: 2rem;
 }
-
+.menu-hamburguer {
+  display: none;
+}
+@media only screen and (max-width:900px) {
+  .header {
+    justify-content: space-evenly;
+  }
+  .menu {
+    display: none;
+  }
+  .menu-hamburguer {
+    display: block;
+    position: relative;
+  }
+  .menu-hamburguer img {
+    width: 10vw;
+    cursor: pointer;
+  }
+  .menu-cascata {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    list-style: none;
+    padding: 8px 0;
+    margin: 8px 0 0 0;
+    min-width: 180px;
+    z-index: 200;
+  }
+  .menu-cascata li {
+    padding: 0;
+  }
+  .menu-cascata a {
+    display: block;
+    padding: 10px 20px;
+    color: #1f2937;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  .menu-cascata a:hover {
+    background-color: #eff6ff;
+    color: #1e3b8a;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h1:last-child {
+    display: none;
+  }
+}
 </style>
