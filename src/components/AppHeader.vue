@@ -25,7 +25,6 @@ import { filtro } from '@/utils/produtosUtils';
       <RouterLink to="/favoritos"><img src="/public/images/Estrela.png" ></RouterLink>
       <RouterLink to="/carrinho"><img src="/public/images/Carrinho.png" ></RouterLink>
     </nav>
-
 </header>
 </template>
 
