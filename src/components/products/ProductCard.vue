@@ -134,11 +134,6 @@ watch(estaNosFavoritos, (novoValor) => {
 .product-card .favoritos{
   background-color: white;
   border: none;
-  box-shadow: 0 5px 5px 0;
-}
-.product-card button:active{
-  background-color: rgb(21, 17, 70);
-    transform: translateY(1px);
 }
 
 .titulo-container {

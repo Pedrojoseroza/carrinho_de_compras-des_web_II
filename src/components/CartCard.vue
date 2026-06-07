@@ -79,6 +79,7 @@ div {
   }
   .container img {
     margin: 10px 20px;
+    height: 20vh;
   }
   .container > button {
     margin: 0 0 0 20px;

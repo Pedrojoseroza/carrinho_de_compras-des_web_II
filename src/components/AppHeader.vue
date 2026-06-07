@@ -56,15 +56,15 @@ function fecharMenu() {
 </template>
 
 
-<style>
+<style scoped>
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #1e3b8af5;
   padding: 15px 0;
-  color: white;
   flex-wrap: wrap;
+  color: white;
   position: fixed;
   top: 0;
   z-index: 100;
@@ -85,6 +85,7 @@ function fecharMenu() {
 
 .logo  h1 {
   font-size: 1.8rem;
+  color: white;
 }
 
 .search-box {

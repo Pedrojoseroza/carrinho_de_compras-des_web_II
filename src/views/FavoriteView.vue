@@ -11,7 +11,11 @@ import { removerFavorito } from '@/services/favoritosServices';
 
   <h1>Seus livros Favoritos</h1>
 
-    <ul>
+    <div class="box">
+      <p v-show="favoritos.length == 0">
+        Você ainda não tem nenhum livro na lista de favoritos : )
+      </p>
+      <ul>
         <FavoriteCard v-for="livro in favoritos"
         v-bind:key="livro.id"
         :titulo="livro.titulo"
@@ -23,17 +27,15 @@ import { removerFavorito } from '@/services/favoritosServices';
          @remover-favorito="removerFavorito(livro.id)"
         @adicionar-carrinho="addCarrinho(livro.id)"
         >
-       </FavoriteCard>
-
-
-      </ul>
+      </FavoriteCard>
+    </ul>
+  </div>
 </template>
 
-<style>
+<style scoped>
 
 .lista-favoritos{
     width: 100%;
-    padding: 20px;
 }
 
 h1{
@@ -43,6 +45,23 @@ h1{
     color: #001f6b;
 
 }
-
+ .box {
+  border: 2px solid rgb(80, 70, 70);
+  max-width: 90vw;
+  min-height: 30vh;
+  border-radius: 20px;
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr;
+  padding: 15px;
+  background-color: white;
+  margin: 20px;
+}
+ .box p {
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: bold;
+  color: rgba(3, 3, 3, 0.63);
+}
 
 </style>
