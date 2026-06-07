@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 defineProps(["titulo", 'preco', 'id', 'url_imagem', 'resenha', 'autor'])
-const emit = defineEmits(['addToCart','addToFavoritos'])
+const emit = defineEmits(['addToCart','addToFavoritos', 'removerFavoritos'])
 const favorito = ref(false)
 </script>
 
@@ -15,7 +15,7 @@ const favorito = ref(false)
     </h2>
 
 <button class="favoritos"
-  @click="favorito = !favorito; emit('addToFavoritos', id)"
+  @click="favorito = !favorito; favorito? emit('addToFavoritos', id) : emit('removerFavoritos', id)"
 >
   <span
     class="heart"
