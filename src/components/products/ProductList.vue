@@ -1,7 +1,12 @@
 <script setup>
 import ProductCard from './ProductCard.vue';
-import produtos from '@/data/products.js';
 import { addFavoritos, removerFavorito } from '@/services/favoritosServices.js';
+
+import produtos from '@/data/produtos.js';
+import { filtrarLista} from '@/utils/produtosUtils.js';
+import { computed } from 'vue';
+import { addCarrinho } from '@/services/CartServices.js';
+const listaFiltrada = computed(()=>filtrarLista(produtos.value));
 </script>
 
 <template>
@@ -11,8 +16,9 @@ import { addFavoritos, removerFavorito } from '@/services/favoritosServices.js';
     </h1>
     <div class="container-livro">
       <ul>
-        <ProductCard v-for="livro in produtos"
-        v-bind:key="livro.id"
+
+        <ProductCard v-for="livro in listaFiltrada"
+        :key="livro.id"
         :titulo="livro.titulo"
         :autor="livro.autor"
         :id="livro.id"
@@ -21,7 +27,9 @@ import { addFavoritos, removerFavorito } from '@/services/favoritosServices.js';
         :resenha="livro.resenha"
         @add-to-favoritos="addFavoritos"
         @remover-favoritos="removerFavorito"
+        @add-to-cart="addCarrinho(livro.id)"
         >
+
       </ProductCard>
       </ul>
     </div>
@@ -39,7 +47,6 @@ import { addFavoritos, removerFavorito } from '@/services/favoritosServices.js';
 .container-livro {
   display: flex;
   justify-content: center;
-
 }
 ul {
   display: grid;

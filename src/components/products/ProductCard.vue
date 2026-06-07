@@ -1,8 +1,21 @@
 <script setup>
-import { ref } from 'vue'
-defineProps(["titulo", 'preco', 'id', 'url_imagem', 'resenha', 'autor'])
+import { ref, computed, watch } from 'vue'
+
+import { formatarPreco } from '@/utils/produtosUtils';
+import { favoritos } from '@/services/favoritosServices.js';
+
+const props = defineProps(["titulo", 'preco', 'id', 'url_imagem', 'resenha', 'autor'])
 const emit = defineEmits(['addToCart','addToFavoritos', 'removerFavoritos'])
-const favorito = ref(false)
+
+const estaNosFavoritos = computed(() =>
+  favoritos.value.some(livro => livro.id === props.id)
+)
+
+const favorito = ref(estaNosFavoritos.value)
+
+watch(estaNosFavoritos, (novoValor) => {
+  favorito.value = novoValor
+})
 </script>
 
 <template>
@@ -15,7 +28,7 @@ const favorito = ref(false)
     </h2>
 
 <button class="favoritos"
-  @click="favorito = !favorito; favorito? emit('addToFavoritos', id) : emit('removerFavoritos', id)"
+  @click="favorito ? emit('removerFavoritos', id) : emit('addToFavoritos', id)"
 >
   <span
     class="heart"
@@ -37,9 +50,9 @@ const favorito = ref(false)
 
     </label>
     <p class="preco">
-      Preço: {{ preco }}
+      Preço: {{ formatarPreco(preco) }}
     </p>
-    <button @click="$emit('addToCart')">
+    <button @click="$emit('addToCart', id)">
       Adicionar ao carrinho
     </button>
   </div>
@@ -83,6 +96,7 @@ const favorito = ref(false)
   border-radius: 10px;
   box-shadow: 0 2px 2px 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
 }
 .product-card:hover {
   transform: scale(1.05);
@@ -112,6 +126,7 @@ const favorito = ref(false)
 }
 .product-card img {
   width: 10vw;
+  height: 30vh;
   margin: 0 auto;
 }
 

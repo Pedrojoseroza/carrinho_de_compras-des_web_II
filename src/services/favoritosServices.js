@@ -3,6 +3,8 @@ import { ref } from "vue";
 const favoritos  = ref([]);
 
 function addFavoritos (id){
+    if (favoritos.value.some(livro => livro.id === id)) return;
+
     const index = produtos.value.findIndex(e => e.id == id)
     const elemento = produtos.value[index]
 

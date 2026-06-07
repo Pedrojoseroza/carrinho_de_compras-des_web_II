@@ -1,12 +1,9 @@
 <script setup>
 import FavoriteCard from '@/components/FavoriteCard.vue';
+import { addCarrinho } from '@/services/CartServices';
 import { favoritos } from '@/services/favoritosServices';
 import { removerFavorito } from '@/services/favoritosServices';
 
-function adicionarAoCarrinho(livro) {
-  console.log('Adicionando ao carrinho:', livro)
-
-}
 
 </script>
 
@@ -24,7 +21,7 @@ function adicionarAoCarrinho(livro) {
         :preco="livro.preco"
         :resenha="livro.resenha"
          @remover-favorito="removerFavorito(livro.id)"
-        @adicionar-carrinho="adicionarAoCarrinho(livro)"
+        @adicionar-carrinho="addCarrinho(livro.id)"
         >
        </FavoriteCard>
 

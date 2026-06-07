@@ -1,16 +1,26 @@
 <script setup>
-
+import AppFooter from './components/AppFooter.vue';
+import AppHeader from './components/AppHeader.vue';
 import { RouterView } from 'vue-router';
-import AppHeader from './components/icons/AppHeader.vue';
 </script>
 
 <template>
-<header>
-    <AppHeader/>
-  </header>
-<RouterView></RouterView>
+  <div class="body">
+    <header>
+      <AppHeader/>
+    </header>
+  <RouterView></RouterView>
+    <footer>
+      <AppFooter></AppFooter>
+    </footer>
+  </div>
 </template>
 
 <style scoped>
-
+header {
+  margin-bottom: 80px;
+}
+div.body {
+ background-color: rgb(231, 230, 230);
+}
 </style>

@@ -32,7 +32,7 @@ const produtos = ref ([
    "autor": "Kyle Simpson",
    "resenha": "Livro voltado ao aprofundamento dos principais conceitos da linguagem JavaScript.",
    "preco": 79.9,
-   "capa": "https://covers.openlibrary.org/b/isbn/9781091210092-L.jpg"
+   "capa": "https://m.media-amazon.com/images/I/71GsZGf3opL._UF1000,1000_QL80_.jpg"
  },
  {
    "id": 5,
