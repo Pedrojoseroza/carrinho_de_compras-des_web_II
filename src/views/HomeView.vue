@@ -1,5 +1,6 @@
 <script setup>
 import ProductList from '@/components/products/ProductList.vue';
+import NotificacaoHome from '@/components/notificacaoHome.vue';
 </script>
 
 <template>
@@ -7,7 +8,10 @@ import ProductList from '@/components/products/ProductList.vue';
       <h1>
       Livros à Venda
     </h1>
+    <homeBanner/>
+    <NotificacaoHome/>
     <ProductList/>
+    
   </div>
 
 </template>
