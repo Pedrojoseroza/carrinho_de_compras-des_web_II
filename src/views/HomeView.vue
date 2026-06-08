@@ -1,5 +1,6 @@
 <script setup>
 import ProductList from '@/components/products/ProductList.vue';
+import homeBanner from '@/components/homeBanner.vue';
 </script>
 
 <template>
@@ -7,6 +8,7 @@ import ProductList from '@/components/products/ProductList.vue';
       <h1>
       Livros à Venda
     </h1>
+    <homeBanner/>
     <ProductList/>
   </div>
 
