@@ -1,6 +1,14 @@
 <script setup>
 import ProductList from '@/components/products/ProductList.vue';
 import NotificacaoHome from '@/components/notificacaoHome.vue';
+import { ref } from 'vue';
+const exibeNotificacao = ref(false);
+function mostrarNotificacao() {
+  exibeNotificacao.value = true;
+  setTimeout(()=> {
+    exibeNotificacao.value = false;
+  }, 2000)
+}
 </script>
 
 <template>
@@ -9,9 +17,9 @@ import NotificacaoHome from '@/components/notificacaoHome.vue';
       Livros à Venda
     </h1>
     <homeBanner/>
-    <NotificacaoHome/>
-    <ProductList/>
-    
+    <NotificacaoHome v-show="exibeNotificacao"/>
+    <ProductList @produto-adicionado="mostrarNotificacao"/>
+
   </div>
 
 </template>

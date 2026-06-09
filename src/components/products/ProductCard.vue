@@ -129,7 +129,9 @@ watch(estaNosFavoritos, (novoValor) => {
   height: 30vh;
   margin: 0 auto;
 }
-
+.product-card > button {
+  background-color: rgb(73, 73, 223);
+}
 
 .product-card .favoritos{
   background-color: white;
