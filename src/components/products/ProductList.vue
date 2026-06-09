@@ -3,32 +3,24 @@ import ProductCard from './ProductCard.vue';
 import { addFavoritos, removerFavorito } from '@/services/favoritosServices.js';
 
 import produtos from '@/data/produtos.js';
-import { filtrarLista} from '@/utils/produtosUtils.js';
+import { filtrarLista } from '@/utils/produtosUtils.js';
 import { computed } from 'vue';
 import { addCarrinho } from '@/services/CartServices.js';
-const listaFiltrada = computed(()=>filtrarLista(produtos.value));
+const listaFiltrada = computed(() => filtrarLista(produtos.value));
 defineEmits(['produtoAdicionado']);
 </script>
 
 <template>
   <div class="container">
-      <ul>
+    <ul>
 
-        <ProductCard v-for="livro in listaFiltrada"
-        :key="livro.id"
-        :titulo="livro.titulo"
-        :autor="livro.autor"
-        :id="livro.id"
-        :url_imagem="livro.capa"
-        :preco="livro.preco"
-        :resenha="livro.resenha"
-        @add-to-favoritos="addFavoritos"
-        @remover-favoritos="removerFavorito"
-        @add-to-cart="addCarrinho(livro.id); $emit('produtoAdicionado')"
-        >
+      <ProductCard v-for="livro in listaFiltrada" :key="livro.id" :titulo="livro.titulo" :autor="livro.autor"
+        :id="livro.id" :url_imagem="livro.capa" :preco="livro.preco" :resenha="livro.resenha"
+        @add-to-favoritos="addFavoritos" @remover-favoritos="removerFavorito"
+        @add-to-cart="addCarrinho(livro.id); $emit('produtoAdicionado')">
 
       </ProductCard>
-      </ul>
+    </ul>
   </div>
 </template>
 
@@ -37,6 +29,7 @@ defineEmits(['produtoAdicionado']);
   display: flex;
   justify-content: center;
 }
+
 ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

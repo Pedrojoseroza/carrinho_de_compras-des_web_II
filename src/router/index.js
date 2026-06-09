@@ -17,7 +17,7 @@ const router = createRouter({
       component: FavoritosView,
     },
     {
-      path:'/carrinho',
+      path: '/carrinho',
       name: "Carrinho",
       component: CartView
     }

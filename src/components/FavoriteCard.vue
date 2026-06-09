@@ -1,7 +1,6 @@
-
 <script setup>
 
-defineProps (['titulo' , 'preco' , 'capa' , 'autor' , 'resenha']);
+defineProps(['titulo', 'preco', 'capa', 'autor', 'resenha']);
 
 const emit = defineEmits([
   'remover-favorito',
@@ -11,7 +10,7 @@ const emit = defineEmits([
 
 <template>
 
- <div class="favorite-card">
+  <div class="favorite-card">
 
     <img :src="capa" :alt="titulo" class="capa">
 
@@ -30,7 +29,7 @@ const emit = defineEmits([
           Remover
         </button>
 
-           <button @click="emit('adicionar-carrinho')">
+        <button @click="emit('adicionar-carrinho')">
           Adicionar ao Carrinho
         </button>
 
@@ -43,58 +42,60 @@ const emit = defineEmits([
 </template>
 
 <style scoped>
-.favorite-card{
-    display: flex;
-    gap: 20px;
-    width: 80%;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #999;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+.favorite-card {
+  display: flex;
+  gap: 20px;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #999;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.capa{
-    width: 150px;
-    height: 220px;
+.capa {
+  width: 150px;
+  height: 220px;
 }
 
-.info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    flex: 1;
+  flex: 1;
 }
 
-.info h2{
-    color: #001f6b;
-    margin-bottom: 10px;
+.info h2 {
+  color: #001f6b;
+  margin-bottom: 10px;
 }
 
-.info h4{
-    margin-bottom: 10px;
+.info h4 {
+  margin-bottom: 10px;
 }
-.resenha{
+
+.resenha {
   color: #7a7a7a;
 }
-.preco{
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #001f6b;
-    margin-top: 10px;
+
+.preco {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #001f6b;
+  margin-top: 10px;
 }
 
-.botoes{
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
+.botoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-button{
-padding: 5px;
-background-color: cadetblue;
+button {
+  padding: 5px;
+  background-color: cadetblue;
 }
 
 

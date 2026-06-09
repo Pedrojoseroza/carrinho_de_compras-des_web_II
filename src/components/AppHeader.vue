@@ -16,13 +16,13 @@ function fecharMenu() {
 
 
 <template>
- <header class="header">
+  <header class="header">
 
     <div class="logo">
       <RouterLink to="/">
-      <img src="/images/logo.png" alt="Logo" />
-    </RouterLink>
-    <h1>Oceano de Livros</h1>
+        <img src="/images/logo.png" alt="Logo" />
+      </RouterLink>
+      <h1>Oceano de Livros</h1>
     </div>
 
 
@@ -32,9 +32,9 @@ function fecharMenu() {
     </div>
 
 
-     <nav class="menu">
-      <RouterLink to="/favoritos"><img src="/images/Estrela.png" ></RouterLink>
-      <RouterLink to="/carrinho"><img src="/images/Carrinho.png" ></RouterLink>
+    <nav class="menu">
+      <RouterLink to="/favoritos"><img src="/images/Estrela.png"></RouterLink>
+      <RouterLink to="/carrinho"><img src="/images/Carrinho.png"></RouterLink>
     </nav>
 
     <nav class="menu-hamburguer">
@@ -52,7 +52,7 @@ function fecharMenu() {
         </li>
       </ul>
     </nav>
-</header>
+  </header>
 </template>
 
 
@@ -83,7 +83,7 @@ function fecharMenu() {
   height: 10vh;
 }
 
-.logo  h1 {
+.logo h1 {
   font-size: 1.8rem;
   color: white;
 }
@@ -113,34 +113,43 @@ function fecharMenu() {
   font-weight: bold;
   transition: 0.3s;
 }
+
 .menu {
   padding: 0 20px 0 0;
 }
+
 .menu a:hover {
   color: #93c5fd;
 }
-.menu img{
-    height: 2rem;
-    width: 2rem;
+
+.menu img {
+  height: 2rem;
+  width: 2rem;
 }
+
 .menu-hamburguer {
   display: none;
 }
+
 @media only screen and (max-width:900px) {
   .header {
     justify-content: space-evenly;
   }
+
   .menu {
     display: none;
   }
+
   .menu-hamburguer {
     display: block;
     position: relative;
   }
+
   .menu-hamburguer img {
     width: 10vw;
     cursor: pointer;
   }
+
   .menu-cascata {
     position: absolute;
     top: 100%;
@@ -154,9 +163,11 @@ function fecharMenu() {
     min-width: 180px;
     z-index: 200;
   }
+
   .menu-cascata li {
     padding: 0;
   }
+
   .menu-cascata a {
     display: block;
     padding: 10px 20px;
@@ -165,13 +176,16 @@ function fecharMenu() {
     font-weight: 500;
     transition: background-color 0.2s;
   }
+
   .menu-cascata a:hover {
     background-color: #eff6ff;
     color: #1e3b8a;
   }
+
   h1 {
     font-size: 1.5rem;
   }
+
   h1:last-child {
     display: none;
   }

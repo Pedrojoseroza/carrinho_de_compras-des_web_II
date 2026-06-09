@@ -13,7 +13,11 @@ import { RouterLink } from 'vue-router';
       </h2>
       <p>
         A nossa livraria permite o contato e compra de uma série de livros de qualidade
-        e valor inéstimaveis Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique soluta nisi eius delectus neque aliquam eos, maiores doloribus eligendi sequi dolor omnis, natus impedit aperiam ipsam cumque corporis quod accusamus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reprehenderit quo in reiciendis facere impedit! Cupiditate, eaque aut. Aut, beatae eum quasi repudiandae laborum animi facere numquam voluptates omnis exercitationem.
+        e valor inéstimaveis Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique soluta nisi eius
+        delectus neque aliquam eos, maiores doloribus eligendi sequi dolor omnis, natus impedit aperiam ipsam cumque
+        corporis quod accusamus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reprehenderit quo in
+        reiciendis facere impedit! Cupiditate, eaque aut. Aut, beatae eum quasi repudiandae laborum animi facere numquam
+        voluptates omnis exercitationem.
       </p>
     </div>
     <div class="pag">
@@ -50,41 +54,52 @@ import { RouterLink } from 'vue-router';
   background-color: #1e3a8a;
   color: white;
 }
+
 .container div {
   max-width: 30vw;
 }
+
 .container div h2 {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
 }
+
 .container div img {
-  width:  75px;
+  width: 75px;
   height: 75px;
   padding: 5px 10px 0 0;
 }
-.container div.pag, div.contatos {
+
+.container div.pag,
+div.contatos {
   padding-top: 30px;
 }
+
 a {
   color: white;
   text-decoration: none;
 }
+
 a:hover {
   transition: 0.5s all ease;
   text-decoration: underline;
 }
+
 ul li {
   margin: 10px 0;
   list-style-type: none;
 }
-.container  div.contatos p {
+
+.container div.contatos p {
   margin: 20px 0;
 }
+
 @media only screen and (max-width:900px) {
   .container {
     display: block;
   }
+
   .container div {
     max-width: 100%;
   }

@@ -19,13 +19,13 @@ defineEmits(['decresceQuant', 'acresceQuant', 'removeCarrinho'])
     </p>
     <div class="quantidades">
       <button @click="$emit('decresceQuant', id)" :disabled="quant == 1">-</button>
-       <span>
+      <span>
         {{ quant }}
-       </span>
-       <button @click="$emit('acresceQuant', id)" :disabled="quant >= 99">+</button>
+      </span>
+      <button @click="$emit('acresceQuant', id)" :disabled="quant >= 99">+</button>
     </div>
     <p>
-      Subtotal: {{formatarPreco(preco * quant)}}
+      Subtotal: {{ formatarPreco(preco * quant) }}
     </p>
   </div>
 </template>
@@ -39,28 +39,35 @@ defineEmits(['decresceQuant', 'acresceQuant', 'removeCarrinho'])
   padding: 10px 0;
   border: 1px solid gray;
 }
+
 div {
   display: flex;
 }
-.container > button {
+
+.container>button {
   padding: 10px;
   background-color: white;
   border-radius: 5px;
 }
-.container > button:hover {
+
+.container>button:hover {
   transition: 0.5s background-color;
-  background-color: rgb(255, 78, 78) ;
+  background-color: rgb(255, 78, 78);
 }
+
 .container h1 {
   font-size: 1.5rem;
 }
+
 .container img {
   margin: 0 0 0 50px;
   height: 10vh;
 }
+
 .container div.quantidades button {
-  padding: 5px 15px ;
+  padding: 5px 15px;
 }
+
 .container div.quantidades span {
   background-color: gray;
   display: flex;
@@ -69,6 +76,7 @@ div {
   align-items: center;
   padding: 0 5px;
 }
+
 .container p:last-of-type {
   margin: 0 0 0 30px;
 }
@@ -77,11 +85,13 @@ div {
   .container {
     display: block;
   }
+
   .container img {
     margin: 10px 20px;
     height: 20vh;
   }
-  .container > button {
+
+  .container>button {
     margin: 0 0 0 20px;
   }
 }

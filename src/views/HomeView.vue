@@ -14,10 +14,10 @@ import homeBanner from '@/components/homeBanner.vue';
 
 <template>
   <div class="container">
-      <h1>
-      Livros à Venda
-    </h1>
     <homeBanner/>
+    <h1 >
+    Livros à Venda
+  </h1>
     <NotificacaoHome v-show="exibeNotificacao"/>
     <ProductList @produto-adicionado="mostrarNotificacao"/>
 
