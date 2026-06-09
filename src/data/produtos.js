@@ -154,6 +154,22 @@ const produtos = ref ([
    "preco": 44.99,
    "capa": "https://http2.mlstatic.com/D_NQ_NP_2X_985891-MLU75934012837_042024-F.webp"
  },
+ {
+   "id": 20,
+   "titulo": "O cortiço",
+   "autor": "Aluísio de Azevedo",
+   "resenha": "O livro acompanha a ascensão social do ambicioso comerciante português João Romão e a degradação dos moradores de sua habitação coletiva, sob forte influência do meio e do determinismo.",
+   "preco": 60.99,
+   "capa": "https://cirandacultural.fbitsstatic.net/img/p/livro-principis-o-cortico-71504/258030.jpg?w=520&h=520&v=no-change&qs=ignore"
+ },
+ {
+   "id": 21,
+   "titulo": "Capitães de Areia",
+   "autor": "Jorge Amado",
+   "resenha": "Narra a vida de um grupo de menores abandonados em Salvador. Sobrevivendo por meio de furtos, os jovens enfrentam a fome, a violência policial e o preconceito da sociedade, enquanto desenvolvem laços de solidariedade e amizade.",
+   "preco": 67.67,
+   "capa": "https://martinsfontespaulista.vteximg.com.br/arquivos/ids/927554-800-800/554567_detalhes.jpg?v=637264795853930000"
+ }
 ])
 
 

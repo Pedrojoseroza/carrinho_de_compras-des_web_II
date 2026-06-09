@@ -7,6 +7,7 @@ import { filtrarLista} from '@/utils/produtosUtils.js';
 import { computed } from 'vue';
 import { addCarrinho } from '@/services/CartServices.js';
 const listaFiltrada = computed(()=>filtrarLista(produtos.value));
+defineEmits(['produtoAdicionado']);
 </script>
 
 <template>
@@ -23,7 +24,7 @@ const listaFiltrada = computed(()=>filtrarLista(produtos.value));
         :resenha="livro.resenha"
         @add-to-favoritos="addFavoritos"
         @remover-favoritos="removerFavorito"
-        @add-to-cart="addCarrinho(livro.id)"
+        @add-to-cart="addCarrinho(livro.id); $emit('produtoAdicionado')"
         >
 
       </ProductCard>
