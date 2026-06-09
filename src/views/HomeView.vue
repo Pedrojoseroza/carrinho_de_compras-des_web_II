@@ -9,6 +9,7 @@ function mostrarNotificacao() {
     exibeNotificacao.value = false;
   }, 2000)
 }
+import homeBanner from '@/components/homeBanner.vue';
 </script>
 
 <template>
